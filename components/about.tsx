@@ -8,7 +8,7 @@ export function About() {
       <div className="container mx-auto px-6 md:px-12 lg:px-24">
         <div className="grid md:grid-cols-12 gap-12 items-start">
           <div className="md:col-span-4 flex items-start">
-            <h2 className="text-3xl font-bold tracking-tight m-0 p-0">About Me</h2>
+            <h2 className="text-3xl font-bold tracking-tight">About Me</h2>
           </div>
           <div className="md:col-span-8 space-y-6 text-lg text-muted-foreground leading-relaxed">
             <motion.p

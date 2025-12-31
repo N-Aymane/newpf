@@ -11,20 +11,13 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "N-Aymane Portfolio",
   description: "Portfolio website for Aymane Naouri - Software Engineering Student and Data Solutions Architect.",
-  generator: "v0.app",
+  generator: "next.js",
   icons: {
     icon: [
       {
-        url: "/icon.svg",
+        url: "/s.svg",
         type: "image/svg+xml",
-      },
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
+        sizes: "512x512", // Increase the size here (e.g., 64x64 or larger as needed)
       },
     ],
     apple: "/apple-icon.png",
@@ -40,6 +33,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          {/* Logo removed as requested */}
           {children}
           <Analytics />
         </ThemeProvider>

@@ -1,0 +1,18 @@
+<svg width="240" height="80" viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- AN text --> 
+  <text 
+    x="50%" 
+    y="55%" 
+    text-anchor="middle" 
+    dominant-baseline="middle" 
+    fill="#000000" 
+    font-family="Inter, Arial, Helvetica, sans-serif" 
+    font-size="44" 
+    font-weight="700" 
+    letter-spacing="2"
+  >
+    AN
+  </text> 
+  <!-- Turquoise dot --> 
+  <circle cx="156" cy="44" r="5" fill="#2DD4BF" /> 
+</svg>

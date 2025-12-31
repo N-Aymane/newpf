@@ -1,0 +1,12 @@
+<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="120" height="40" fill="#000000"></rect>
+
+  <!-- AN text -->
+  <text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" fill="#FFFFFF" font-family="Inter, Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="1">
+    AN
+  </text>
+
+  <!-- Turquoise dot (same position as original) -->
+  <circle cx="78" cy="22" r="2.5" fill="#2DD4BF"></circle>
+</svg>

@@ -8,6 +8,7 @@ export type LogoItem =
       href?: string;
       title?: string;
       ariaLabel?: string;
+      color?: string;
     }
   | {
       src: string;

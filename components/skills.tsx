@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import LogoLoop, { LogoItem } from "./LogoLoop"
 import "./LogoLoop.css"
 import "./LogoLoop.custom.css"
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiPython, SiPytorch, SiJupyter, SiShadcnui ,SiFramer, SiOllama, SiAnaconda, SiJavascript, SiDocker, SiMongodb, SiGit, SiLinux } from "react-icons/si"
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiPython, SiPytorch, SiTensorflow, SiJupyter, SiShadcnui ,SiFramer, SiOllama, SiAnaconda, SiJavascript, SiDocker, SiMongodb, SiGit, SiLinux } from "react-icons/si"
 import { SiPostgresql, SiKubernetes, SiOracle, SiPhp, SiLaravel } from "react-icons/si"
 import { FaJava } from "react-icons/fa6";
 const skillCategories = [
@@ -30,29 +30,29 @@ const skillCategories = [
 export function Skills() {
   // Example logos, replace with your own or use public/logo files
     const techLogos: LogoItem[] = [
-      { node: <SiReact />, title: "React", href: "https://react.dev" },
-      { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
-      { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
-      { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
-      { node: <SiPython />, title: "Python", href: "https://www.python.org" },
-      { node: <SiPytorch />, title: "Pytorch", href: "https://www.pytorch.org/" },
-      { node: <FaJava />, title: "Java", href: "https://www.java.com" },
-      { node: <SiJavascript />, title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-      { node: <SiDocker />, title: "Docker", href: "https://www.docker.com" },
-      { node: <SiMongodb />, title: "MongoDB", href: "https://www.mongodb.com" },
-      { node: <SiGit />, title: "Git", href: "https://git-scm.com" },
-      { node: <SiLinux />, title: "Linux", href: "https://www.linux.org" },
-      { node: <SiPostgresql />, title: "PostgreSQL", href: "https://www.postgresql.org" },
-      { node: <SiKubernetes />, title: "Kubernetes", href: "https://kubernetes.io" },
-      { node: <SiOracle />, title: "Oracle", href: "https://www.oracle.com" },
-      { node: <SiPhp />, title: "PHP", href: "https://www.php.net" },
-      { node: <SiLaravel />, title: "Laravel", href: "https://laravel.com" },
-      { node: <SiJupyter />, title: "Jupyte", href: "https://jupyter.org" },
-      { node: <SiAnaconda />, title: "Anaconda", href: "https://www.anaconda.com" },
-      { node: <SiOllama />, title: "Ollama", href: "https://ollama.com" },
-      { node: <SiFramer />, title: "Framer Motion", href: "https://www.framer.com/motion/" },
-      { node: <SiShadcnui />, title: "shadcn", href: "https://ui.shadcn.com" },
-      
+      { node: <SiReact />, title: "React", href: "https://react.dev", color: "#61DAFB" },
+      { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org", color: "#000" },
+      { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org", color: "#3178C6" },
+      { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com", color: "#38BDF8" },
+      { node: <SiPython />, title: "Python", href: "https://www.python.org", color: "#3776AB" },
+      { node: <SiPytorch />, title: "Pytorch", href: "https://www.pytorch.org/", color: "#EE4C2C" },
+      { node: <SiTensorflow />, title: "TensorFlow", href: "https://www.tensorflow.org/", color: "#FF6F00" },
+      { node: <FaJava />, title: "Java", href: "https://www.java.com", color: "#007396" },
+      { node: <SiJavascript />, title: "JavaScript", href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", color: "#F7DF1E" },
+      { node: <SiDocker />, title: "Docker", href: "https://www.docker.com", color: "#2496ED" },
+      { node: <SiMongodb />, title: "MongoDB", href: "https://www.mongodb.com", color: "#47A248" },
+      { node: <SiGit />, title: "Git", href: "https://git-scm.com", color: "#F05032" },
+      { node: <SiLinux />, title: "Linux", href: "https://www.linux.org", color: "#FCC624" },
+      { node: <SiPostgresql />, title: "PostgreSQL", href: "https://www.postgresql.org", color: "#336791" },
+      { node: <SiKubernetes />, title: "Kubernetes", href: "https://kubernetes.io", color: "#326CE5" },
+      { node: <SiOracle />, title: "Oracle", href: "https://www.oracle.com", color: "#F80000" },
+      { node: <SiPhp />, title: "PHP", href: "https://www.php.net", color: "#777BB4" },
+      { node: <SiLaravel />, title: "Laravel", href: "https://laravel.com", color: "#FF2D20" },
+      { node: <SiJupyter />, title: "Jupyte", href: "https://jupyter.org", color: "#F37626" },
+      { node: <SiAnaconda />, title: "Anaconda", href: "https://www.anaconda.com", color: "#44A833" },
+      { node: <SiOllama />, title: "Ollama", href: "https://ollama.com", color: "#ffffffff" },
+      { node: <SiFramer />, title: "Framer Motion", href: "https://www.framer.com/motion/", color: "#0055FF" },
+      { node: <SiShadcnui />, title: "shadcn", href: "https://ui.shadcn.com", color: "#111" },
     ];
 
   return (
@@ -87,7 +87,21 @@ export function Skills() {
         </div>
       </div>
       <div className="mt-8 w-full">
-  <LogoLoop logos={techLogos} speed={80} logoHeight={40} gap={40} scaleOnHover fadeOut fadeOutColor="#222" width="100%" />
+  <LogoLoop logos={techLogos} speed={80} logoHeight={40} gap={40} scaleOnHover fadeOut fadeOutColor="#222" width="100%"
+    renderItem={(item) => {
+      const logoContent = ('node' in item && item.color)
+        ? <span style={{ color: item.color }} className="logoloop__node">{item.node}</span>
+        : ('node' in item ? <span className="logoloop__node">{item.node}</span> : <img src={item.src} alt={item.title || ''} />);
+      if (item.href) {
+        return (
+          <a href={item.href} target="_blank" rel="noopener noreferrer" aria-label={item.title || 'logo'}>
+            {logoContent}
+          </a>
+        );
+      }
+      return logoContent;
+    }}
+  />
       </div>
     </section>
   )

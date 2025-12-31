@@ -1,12 +1,20 @@
 /* Add grayscale by default, color on hover */
 /* Grayscale by default, color on hover for both img and svg */
-.logoloop__item img,
-.logoloop__item svg {
+/* Grayscale by default, color on hover for both img and svg */
+.logoloop__item img {
   filter: grayscale(1) brightness(0.9);
   transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.logoloop__item:hover img,
+.logoloop__item:hover img {
+  filter: none;
+}
+.logoloop__item svg {
+  color: #888;
+  filter: grayscale(1) brightness(0.9);
+  transition: filter 0.3s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 .logoloop__item:hover svg {
+  color: inherit;
   filter: none;
 }
 /* Make fadeOut corners more visible */
