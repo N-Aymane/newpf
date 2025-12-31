@@ -1,0 +1,12 @@
+ .orb-container {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+
+.orb-glow {
+  filter: drop-shadow(0 0 80px #d726ff88) drop-shadow(0 0 120px #d726ff44);
+}
+}
