@@ -50,9 +50,9 @@ export function Skills() {
       { node: <SiLaravel />, title: "Laravel", href: "https://laravel.com", color: "#FF2D20" },
       { node: <SiJupyter />, title: "Jupyte", href: "https://jupyter.org", color: "#F37626" },
       { node: <SiAnaconda />, title: "Anaconda", href: "https://www.anaconda.com", color: "#44A833" },
-      { node: <SiOllama />, title: "Ollama", href: "https://ollama.com", color: "#ffffffff" },
-      { node: <SiFramer />, title: "Framer Motion", href: "https://www.framer.com/motion/", color: "#0055FF" },
-      { node: <SiShadcnui />, title: "shadcn", href: "https://ui.shadcn.com", color: "#111" },
+      { node: <SiOllama />, title: "Ollama", href: "https://ollama.com", color: "#686767ff" },
+      { node: <SiFramer />, title: "Framer Motion", href: "https://www.framer.com/motion/", color: "#c8ff00ff" },
+      { node: <SiShadcnui />, title: "shadcn", href: "https://ui.shadcn.com", color: "#5c5959ff" },
     ];
 
   return (
@@ -87,7 +87,7 @@ export function Skills() {
         </div>
       </div>
       <div className="mt-8 w-full">
-  <LogoLoop logos={techLogos} speed={80} logoHeight={40} gap={40} scaleOnHover fadeOut fadeOutColor="#222" width="100%"
+  <LogoLoop logos={techLogos} speed={80} logoHeight={40} gap={40} scaleOnHover width="100%"
     renderItem={(item) => {
       const logoContent = ('node' in item && item.color)
         ? <span style={{ color: item.color }} className="logoloop__node">{item.node}</span>
