@@ -1,98 +1,36 @@
 "use client"
-
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { motion, AnimatePresence } from "framer-motion"
+import { useEffect, useRef, useState, useSyncExternalStore } from "react"
 import { Menu, X, Sun, Moon } from "lucide-react"
+import { LiquiGlass } from "@liqui-design/glass"
+import { Button } from "@/components/liqui/button"
 import { useTheme } from "next-themes"
-import { Button } from "@/components/ui/button"
-
-const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
-]
-
+const navLinks = [{ name: "About", href: "#about" }, { name: "Experience", href: "#experience" }, { name: "Skills", href: "#skills" }, { name: "Projects", href: "#projects" }, { name: "Contact", href: "#contact" }]
+const subscribe = () => () => {}
+const controlsGlass = { radius: 22, blur: 1, refraction: 24, bezel: 8, frost: 0.55, specular: 0.4, dispersion: 0 } as const
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
-
+  const [open, setOpen] = useState(false)
+  const mounted = useSyncExternalStore(subscribe, () => true, () => false)
+  const { resolvedTheme, setTheme } = useTheme()
+  const toggleRef = useRef<HTMLButtonElement>(null)
   useEffect(() => {
-    setMounted(true)
-    const handleScroll = () => setIsScrolled(window.scrollY > 20)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "bg-background/95 border-b py-4" : "bg-transparent py-8"
-      }`}
-    >
-  <div className="w-full px-6 md:px-12 lg:px-24 flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold tracking-tighter">
-          AN<span className="text-primary">.</span>
-        </Link>
-
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-base font-semibold text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
-
-          {mounted && (
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="rounded-full"
-            >
-              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-            </Button>
-          )}
+    if (!open) return
+    const onEscape = (event: KeyboardEvent) => { if (event.key === "Escape") { setOpen(false); toggleRef.current?.focus() } }
+    document.addEventListener("keydown", onEscape)
+    return () => document.removeEventListener("keydown", onEscape)
+  }, [open])
+  return <header className="site-header site-header--liqui">
+    <LiquiGlass className="page-width liqui-nav-shell" contentClassName="liqui-nav-content" material="auto" frost={0.65} blur={6} refraction={32} bezel={14} radius={32} specular={0.18} dispersion={0}>
+      <nav className="nav" aria-label="Main navigation">
+        <a className="wordmark" href="#top" aria-label="Aymane Naouri home">AN<span className="accent">.</span></a>
+        <div className="desktop-nav">{navLinks.map(link => <a key={link.name} href={link.href}>{link.name}</a>)}</div>
+        <div className="nav-controls">
+          <Button className="liqui-nav-control" glass={controlsGlass} aria-label={mounted && resolvedTheme === "light" ? "Switch to dark theme" : "Switch to light theme"} onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}>{mounted && resolvedTheme === "light" ? <Moon size={19} /> : <Sun size={19} />}</Button>
+          <Button ref={toggleRef} className="liqui-nav-control liqui-menu-toggle" glass={controlsGlass} aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>{open ? <X size={22} /> : <Menu size={22} />}</Button>
         </div>
-
-        {/* Mobile Toggle */}
-        <button className="md:hidden text-foreground" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Nav */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b"
-          >
-            <div className="flex flex-col gap-4 p-6">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-lg font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
-  )
+      </nav>
+    </LiquiGlass>
+    {open && <LiquiGlass id="mobile-navigation" className="page-width liqui-mobile-shell" contentClassName="liqui-mobile-content" material="auto" frost={0.65} blur={6} refraction={32} bezel={14} radius={24} specular={0.18} dispersion={0}>
+      <nav className="liqui-mobile-links" aria-label="Mobile navigation">{navLinks.map(link => <a key={link.name} href={link.href} onClick={() => setOpen(false)}>{link.name}</a>)}</nav>
+    </LiquiGlass>}
+  </header>
 }
