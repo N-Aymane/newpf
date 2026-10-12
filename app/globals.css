@@ -401,3 +401,6 @@ body { font-size:1.0625rem; line-height:1.65; }
 @media (max-width:480px) { .ai-hero h1 { font-size:clamp(64px,17vw,80px); } .hero-role { font-size:13px; } .ai-hero .hero-description { font-size:17px; margin-top:24px; } .hero-actions { gap:20px; } .airline-feature,.featured-project { padding:24px; border-radius:20px; } .airline-feature h2 { font-size:30px; } .airline-feature > p { font-size:16px; } .model-flow { grid-template-columns:1fr; gap:18px; padding-block:20px; } .model-flow li { display:flex; align-items:center; justify-content:space-between; } .model-flow span { font-size:13px; margin:0; } .model-flow strong { font-size:17px; } .model-flow li:not(:last-child)::after { content:none; } .feature-footer > span { font-size:13px; } .certification-block ul { grid-template-columns:1fr; } }
 @media (prefers-contrast:more) { :root { --muted-foreground:#30473d; --border:#6b7b73; } .dark { --muted-foreground:#d0dcd5; --border:#8b9b91; } .liqui-glass { background:var(--surface); } .liqui-glass__backdrop,.liqui-glass__refract { display:none; } }
 .model-flow span, .feature-footer > span { font-size: 13px; }
+
+.resume-download { margin-top: 20px; }
+.resume-format { color: var(--muted-foreground); font-size: 13px; font-weight: 400; }

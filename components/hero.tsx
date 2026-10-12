@@ -1,4 +1,4 @@
-import { ArrowDownRight, ArrowUpRight, Plane } from "lucide-react"
+import { ArrowDownRight, ArrowUpRight, Download, Plane } from "lucide-react"
 import { profile } from "@/lib/portfolio"
 import { Reveal } from "./reveal"
 
@@ -9,6 +9,7 @@ export function Hero() {
       <h1 id="hero-title">Aymane<br />Naouri<span className="accent">.</span></h1>
       <p className="hero-description"><strong>AI engineering, from model to product.</strong><br />I build intelligent systems, explore data, and turn ideas into useful software.</p>
       <div className="hero-actions"><a className="button button-primary" href="#projects">Explore my work <ArrowDownRight size={18} aria-hidden="true" /></a><a className="text-link" href="#contact">Get in touch <ArrowUpRight size={18} aria-hidden="true" /></a></div>
+      <a className="text-link resume-download" href="/aymane-naouri-resume.pdf" download="Aymane-Naouri-Resume.pdf"><Download size={18} aria-hidden="true" /> Download résumé <span className="resume-format">PDF</span></a>
     </Reveal>
     <Reveal className="hero-feature" delay={0.1}>
       <article className="airline-feature">
