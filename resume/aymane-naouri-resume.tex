@@ -1,0 +1,124 @@
+% Resume adapted from Jake Gutierrez / sb2nov (MIT).
+% Sources: LinkedIn profile and visible activity, plus lib/portfolio.ts.
+\documentclass[letterpaper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\ifdefined\pdfglyphtounicode
+  \IfFileExists{glyphtounicode.tex}{\input{glyphtounicode}}{}
+\fi
+\ifdefined\pdfgentounicode\pdfgentounicode=1\fi
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-5pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule\vspace{-6pt}]
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{
+  \item\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small#4} \\
+  \end{tabular*}\vspace{-6pt}}
+\newcommand{\resumeProjectHeading}[2]{
+  \item\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#1 & \small#2 \\
+  \end{tabular*}\vspace{-6pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in,label={},itemsep=5pt,topsep=3pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in,itemsep=1pt,topsep=5pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\begin{document}
+\begin{center}
+  \textbf{\Huge\scshape Aymane Naouri} \\ \vspace{3pt}
+  \small AI \& Data Engineering Student $|$ Rabat, Morocco \\ \vspace{2pt}
+  \href{mailto:naouri.ay@gmail.com}{naouri.ay@gmail.com} $|$
+  \href{https://www.linkedin.com/in/aymane-naouri}{linkedin.com/in/aymane-naouri} $|$
+  \href{https://github.com/N-Aymane}{github.com/N-Aymane}
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {\'Ecole Marocaine des Sciences de l'Ing\'enieur (EMSI)}{2022 -- 2027}
+    {Engineering Degree in Computer Science --- in progress}{Morocco}
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading{AI Engineer Intern}{July -- August 2026}{Royal Air Maroc}{Casablanca, Morocco}
+  \resumeItemListStart
+    \resumeItem{Developed an airline disruption dashboard for flight-delay prediction, risk monitoring, and financial-impact analysis using Next.js, FastAPI, and XGBoost.}
+    \resumeItem{Connected the interface to a prediction API; supported demonstrations with mock data and fallback scoring.}
+  \resumeItemListEnd
+  \resumeSubheading{Data Analyst Intern}{July -- August 2025}{OCP Group}{Ben Guerir, Morocco}
+  \resumeItemListStart
+    \resumeItem{Analyzed Big Data and built interactive Microsoft Power BI dashboards to visualize findings and support data-informed decisions.}
+  \resumeItemListEnd
+  \resumeSubheading{Full-Stack Developer}{July -- September 2023}{Digisystems}{Casablanca-Settat, Morocco}
+  \resumeItemListStart
+    \resumeItem{Worked on frontend and backend development with Laravel, React, and React Native, including API design, software architecture, and database management.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Leadership \& Activities}
+\resumeSubHeadingListStart
+  \resumeSubheading{Vice President}{August 2025 -- July 2026}{EMSI AI Nexus}{Rabat, Morocco}
+  \resumeItemListStart
+    \resumeItem{Contributed to innovation and R\&D initiatives in AI, machine learning, deep learning, intelligent systems, and data analysis.}
+    \resumeItem{Participated in the 36-hour CAN Innovation Hackathon in Rabat (December 20--21, 2025), collaborating on ideas and prototypes at the intersection of sport, AI, and data.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Selected Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{Quant Research Dashboard} $|$ \emph{Next.js, Python, FastAPI}}{\href{https://github.com/N-Aymane/quant-research-dashboard}{Repository}}
+  \resumeItemListStart
+    \resumeItem{Built portfolio-performance, allocation, and strategy-diagnostic views using sample data, with a Python backend for Black--Scholes option pricing and portfolio optimization.}
+  \resumeItemListEnd
+  \resumeProjectHeading{\textbf{FORMD Fitness Tracker} $|$ \emph{Next.js, TypeScript, Gemini, Supabase}}{\href{https://github.com/N-Aymane/formd-fitness-tracker}{Repository}}
+  \resumeItemListStart
+    \resumeItem{Developed a nutrition and training app with AI-assisted meal scans, fitness tracking, and account-based data synchronization.}
+  \resumeItemListEnd
+  \resumeProjectHeading{\textbf{Stock Management System} $|$ \emph{Next.js, Django REST, MySQL, JWT}}{}
+  \resumeItemListStart
+    \resumeItem{Co-developed an inventory application with a secure API, stock-movement traceability, real-time reports, low-stock dashboard alerts, and an intelligent chatbot.}
+  \resumeItemListEnd
+  \resumeProjectHeading{\textbf{Fine-Tuned Chatbot} $|$ \emph{Python, Mistral LLM, MongoDB}}{}
+  \resumeItemListStart
+    \resumeItem{Built a conversational application using Mistral LLM and MongoDB for context-aware interactions.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in,label={},topsep=3pt]
+  \small\item{
+    \textbf{Languages:} Python, SQL, Java, JavaScript, TypeScript, PHP, C/C++ \\
+    \textbf{AI \& Data:} Machine Learning, Deep Learning, PyTorch, TensorFlow, XGBoost, LLMs, Power BI \\
+    \textbf{Development:} Next.js, React, React Native, FastAPI, Django, Laravel, REST APIs \\
+    \textbf{Databases \& Tools:} PostgreSQL, MySQL, MongoDB, Oracle, Git, Docker, Linux
+  }
+\end{itemize}\vspace{-9pt}
+
+\section{Selected Certifications}
+\begin{itemize}[leftmargin=0.15in,label={},topsep=3pt]
+  \small\item{Oracle Autonomous AI Database Certified Professional; Google AI Essentials V1; IBM Introduction to Neural Networks and PyTorch; IBM Python for Data Science, AI \& Development; Meta React Native.}
+\end{itemize}
+\end{document}
