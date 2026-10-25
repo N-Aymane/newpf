@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useRef, useState, useSyncExternalStore } from "react"
 import { Menu, X, Sun, Moon } from "lucide-react"
-import { LiquiGlass } from "@liqui-design/glass"
+import GlassSurface from "./react-bits/GlassSurface"
 import { Button } from "@/components/liqui/button"
 import { useTheme } from "next-themes"
 import { LanguageSwitch } from "./language-switch"
@@ -22,7 +22,7 @@ export function Navbar({ locale = "en" }: { locale?: Locale }) {
     return () => document.removeEventListener("keydown", onEscape)
   }, [open])
   return <header className="site-header site-header--liqui">
-    <LiquiGlass className="page-width liqui-nav-shell" contentClassName="liqui-nav-content" material="auto" frost={0.65} blur={6} refraction={32} bezel={14} radius={32} specular={0.18} dispersion={0}>
+    <div className="page-width"><GlassSurface className="react-bits-nav-shell" width="100%" height={64} borderRadius={32} distortionScale={-180} displace={0.5} backgroundOpacity={0.1} redOffset={0} greenOffset={0} blueOffset={0}>
       <nav className="nav" aria-label={t("Main navigation")}>
         <a className="wordmark" href="#top" aria-label={t("Aymane Naouri home")}>AN<span className="accent">.</span></a>
         <div className="desktop-nav">{navLinks.map(link => <a key={link.name} href={link.href}>{t(link.name)}</a>)}</div>
@@ -32,9 +32,9 @@ export function Navbar({ locale = "en" }: { locale?: Locale }) {
           <Button ref={toggleRef} className="liqui-nav-control liqui-menu-toggle" glass={controlsGlass} aria-label={t(open ? "Close navigation" : "Open navigation")} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>{open ? <X size={22} /> : <Menu size={22} />}</Button>
         </div>
       </nav>
-    </LiquiGlass>
-    {open && <LiquiGlass id="mobile-navigation" className="page-width liqui-mobile-shell" contentClassName="liqui-mobile-content" material="auto" frost={0.65} blur={6} refraction={32} bezel={14} radius={24} specular={0.18} dispersion={0}>
+    </GlassSurface></div>
+    {open && <div id="mobile-navigation" className="page-width liqui-mobile-shell"><GlassSurface className="react-bits-mobile-shell" width="100%" height="auto" borderRadius={24} distortionScale={-180} displace={0.5} backgroundOpacity={0.1} redOffset={0} greenOffset={0} blueOffset={0}>
       <nav className="liqui-mobile-links" aria-label={t("Mobile navigation")}>{navLinks.map(link => <a key={link.name} href={link.href} onClick={() => setOpen(false)}>{t(link.name)}</a>)}</nav>
-    </LiquiGlass>}
+    </GlassSurface></div>}
   </header>
 }

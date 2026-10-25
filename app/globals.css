@@ -143,6 +143,20 @@ button { cursor: pointer; }
 /* Liqui owns surface anatomy; these rules only lay out its content. */
 .site-header--liqui { top:16px; margin-top:16px; background:transparent; border:0; }
 .liqui-nav-shell { height:64px; }
+/* React Bits is a web glass approximation. Keep the existing navigation geometry. */
+.react-bits-nav-shell > .glass-surface__content { padding:0; }
+.react-bits-mobile-shell > .glass-surface__content { padding:0; display:block; }
+.react-bits-nav-shell .nav { width:100%; }
+.site-header--liqui .glass-surface { color-scheme:light; }
+.dark .site-header--liqui .glass-surface { color-scheme:dark; }
+@media (prefers-reduced-transparency:reduce), (prefers-contrast:more) {
+  .site-header--liqui .glass-surface { background:var(--surface); backdrop-filter:none; -webkit-backdrop-filter:none; }
+  .site-header--liqui .glass-surface__sheen,.site-header--liqui .glass-surface__rim { display:none; }
+}
+@supports not (backdrop-filter:blur(1px)) {
+  .site-header--liqui .glass-surface { background:var(--surface); }
+}
+@media (prefers-reduced-motion:reduce) { .site-header--liqui .glass-surface { transition:none; } }
 .liqui-nav-content { height:100%; }
 .site-header--liqui .nav { height:64px; padding-inline:24px; }
 .site-header--liqui .desktop-nav { gap:28px; }
@@ -341,6 +355,13 @@ body { font-size:1.0625rem; line-height:1.65; }
 .hero-actions { gap:24px; }
 .hero-feature { min-width:0; }
 .airline-feature { padding:32px; background:var(--surface); border-radius:24px; border:1px solid var(--border); }
+.airline-spotlight.spotlight-card { padding:0; background:var(--surface); border-radius:24px; box-shadow:none; --spotlight-card-border:var(--border) !important; }
+.airline-spotlight .airline-feature { background:transparent; }
+.hero-description .hero-blur-text { display:inline-flex !important; }
+@media (hover:none), (pointer:coarse), (prefers-reduced-motion:reduce) {
+  .airline-spotlight .spotlight-card__light,.airline-spotlight .spotlight-card__edge { display:none; }
+}
+@media (max-width:480px) { .airline-spotlight.spotlight-card { border-radius:20px; } }
 .feature-context { display:flex; align-items:center; gap:10px; color:var(--muted-foreground); font-size:13px; }
 .feature-context svg { flex-shrink:0; color:var(--primary); }
 .airline-feature h2 { font-size:clamp(28px,2.7vw,36px); line-height:1.2; letter-spacing:-.04em; font-weight:500; margin:28px 0 18px; }
