@@ -5,11 +5,13 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { profile } from "@/lib/portfolio"
+import { getLocale } from "@/lib/locale"
+import { translate } from "@/lib/dictionary"
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" })
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" })
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: `${profile.name} | AI, Data & Software`,
   description: `${profile.headline}. ${profile.summary}`,
   generator: "next.js",
@@ -23,13 +25,19 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale()
+  return { ...metadata, title: locale === "fr" ? `${profile.name} | IA, données et logiciel` : metadata.title, description: `${translate(locale, profile.headline)}. ${translate(locale, profile.summary)}` }
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const locale = await getLocale()
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={`${geist.variable} ${geistMono.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           

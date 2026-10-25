@@ -404,3 +404,41 @@ body { font-size:1.0625rem; line-height:1.65; }
 
 .resume-download { margin-top: 20px; }
 .resume-format { color: var(--muted-foreground); font-size: 13px; font-weight: 400; }
+.language-switch { min-width:44px; min-height:44px; display:grid; place-items:center; border:1px solid var(--border); border-radius:22px; background:var(--surface); color:var(--foreground); font:500 13px var(--font-sans); cursor:pointer; }
+.language-switch:hover { border-color:var(--primary); }
+.language-switch:disabled { cursor:wait; opacity:.65; }
+
+/* Real hosted-app screenshots, with React Bits' liquid edge refraction. */
+.project-gallery { min-width:0; }
+.project-gallery-stage { height:560px; position:relative; border:1px solid var(--border); border-radius:24px; overflow:hidden; background:var(--surface); }
+.project-gallery .flex-carousel__caption { color:var(--foreground); }
+.project-gallery .flex-carousel__title { font-size:15px; }
+.project-gallery .flex-carousel__subtitle { opacity:1; color:var(--muted-foreground); font-size:13px; }
+.project-gallery .flex-carousel__count { display:none; }
+.project-gallery .flex-carousel:focus-visible { outline:2px solid var(--primary); outline-offset:-4px; box-shadow:none; }
+.project-gallery-fallback { display:flex; align-items:center; gap:20px; height:100%; overflow-x:auto; scroll-snap-type:x mandatory; padding:28px; }
+.project-gallery-fallback figure { flex:0 0 85%; max-width:660px; scroll-snap-align:center; margin:0; }
+.project-gallery-fallback img { display:block; width:100%; height:auto; border-radius:20px; border:1px solid var(--border); }
+.project-gallery-fallback figcaption { font-size:14px; margin-top:16px; text-align:center; }
+.project-gallery-toolbar { display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:16px; }
+.project-gallery-toolbar p { color:var(--muted-foreground); font-size:13px; margin:0; }
+.project-gallery-controls { display:flex; gap:8px; }
+.project-gallery-controls button { width:44px; height:44px; display:grid; place-items:center; border:1px solid var(--border); border-radius:12px; color:var(--foreground); background:var(--surface); cursor:pointer; }
+.project-gallery-controls button:hover { border-color:var(--primary); }
+.project-gallery-controls button:active { transform:scale(.98); }
+.hosted-project-detail { display:grid; grid-template-columns:1fr auto; align-items:center; gap:32px; padding-block:20px 28px; min-height:160px; }
+.hosted-project-detail h3 { font-size:28px; letter-spacing:-.035em; margin-bottom:12px; }
+.hosted-project-detail p { max-width:65ch; color:var(--muted-foreground); font-size:17px; line-height:1.75; margin:0; }
+.hosted-project-detail .button { white-space:nowrap; min-height:48px; border-radius:12px; }
+.hosted-project-index { border-top:1px solid var(--border); padding-block:12px; }
+.hosted-project-index summary { cursor:pointer; min-height:44px; align-content:center; font-size:14px; }
+.hosted-project-index ul { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px 32px; list-style:none; padding:8px 0 0; margin:0; }
+@media (max-width:768px) {
+  .project-gallery-stage { height:460px; border-radius:20px; }
+  .project-gallery-fallback { padding:20px; }
+  .project-gallery-fallback figure { flex-basis:92%; }
+  .hosted-project-detail { grid-template-columns:1fr; gap:20px; }
+  .hosted-project-detail h3 { font-size:24px; }
+  .hosted-project-detail .button { justify-self:start; }
+  .hosted-project-index ul { grid-template-columns:1fr; }
+}

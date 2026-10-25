@@ -7,7 +7,7 @@
     "test:contact": "node --test tests/contact-email.test.mjs",
     "build": "next build",
     "dev": "next dev",
-    "lint": "eslint app components/hero.tsx components/navbar.tsx components/liqui components/portfolio-sections.tsx components/protected-email.tsx components/reveal.tsx components/theme-provider.tsx lib/portfolio.ts lib/contact-email.ts",
+    "lint": "eslint app components/hero.tsx components/navbar.tsx components/liqui components/react-bits components/project-gallery.tsx components/language-switch.tsx components/portfolio-sections.tsx components/protected-email.tsx components/reveal.tsx components/theme-provider.tsx lib/portfolio.ts lib/hosted-projects.ts lib/contact-email.ts lib/dictionary.ts lib/locale.ts",
     "lint:all": "eslint .",
     "start": "next start"
   },

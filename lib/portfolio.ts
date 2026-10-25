@@ -1,5 +1,5 @@
 export interface ExperienceEntry { role: string; company: string; period: string; location?: string; description?: string; url?: string }
-export interface ProjectEntry { title: string; category: string; description: string; tags: string[]; url?: string }
+export interface ProjectEntry { title: string; category: string; description: string; tags: string[]; url?: string; appUrl?: string }
 export const profile = {
   name: "Aymane Naouri", headline: "AI & Data Engineering Student", location: "Rabat, Morocco",
   linkedin: "https://www.linkedin.com/in/aymane-naouri", github: "https://github.com/N-Aymane",
@@ -14,7 +14,7 @@ export const experiences: ExperienceEntry[] = [
 ]
 export const projects: ProjectEntry[] = [
   { title: "Quant Research Dashboard", category: "Quantitative research", description: "A research dashboard for portfolio performance, allocation, and strategy diagnostics using sample data. Includes a Python backend for Black-Scholes option pricing and portfolio optimization.", tags: ["Next.js", "TypeScript", "Recharts", "FastAPI", "Python"], url: "https://github.com/N-Aymane/quant-research-dashboard" },
-  { title: "FORMD Fitness Tracker", category: "AI-powered fitness", description: "A nutrition and training app with AI-assisted meal scans, fitness tracking, and account-based data synchronization.", tags: ["Next.js", "React", "TypeScript", "Gemini", "Supabase"], url: "https://github.com/N-Aymane/formd-fitness-tracker" },
+  { title: "FORMD Fitness Tracker", category: "AI-powered fitness", description: "A nutrition and training app with AI-assisted meal scans, fitness tracking, and account-based data synchronization.", tags: ["Next.js", "React", "TypeScript", "Gemini", "Supabase"], url: "https://github.com/N-Aymane/formd-fitness-tracker", appUrl: "https://formd-indol.vercel.app" },
   { title: "Stock Management Web App", category: "Full-stack development", description: "A platform for real-time inventory tracking and management with secure authentication.", tags: ["Next.js", "Django REST", "MySQL", "JWT"] },
   { title: "Fine-Tuned Chatbot", category: "Artificial intelligence", description: "A conversational application using Mistral LLM and MongoDB for context-aware interactions.", tags: ["Mistral LLM", "MongoDB", "Python"] },
   { title: "Absence Management System", category: "Web application", description: "An attendance management system for tracking and managing absences in educational or corporate settings.", tags: ["Laravel", "MySQL", "Tailwind"] },
